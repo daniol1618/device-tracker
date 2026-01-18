@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any>('assets/devices.json')
+    this.http.get<any>('http://localhost:8080/api/dashboard')
       .subscribe(data => {
         this.devices = data.devices;
         data.statuses.forEach((s: any) =>
