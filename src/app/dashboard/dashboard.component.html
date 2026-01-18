@@ -1,21 +1,15 @@
 <div class="dashboard">
-    <mat-card class="device-card" *ngFor="let device of devices">
-        <mat-card-header>
-            <mat-card-title>
-                {{ device.name }}
-            </mat-card-title>
-            <mat-card-subtitle>
-                Device ID: {{ device.id }}
-            </mat-card-subtitle>
-        </mat-card-header>
+  <mat-card class="device-card" *ngFor="let device of devices">
+    <mat-card-header>
+      <mat-card-title>{{ device.name }}</mat-card-title>
+      <mat-card-subtitle>ID: {{ device.id }}</mat-card-subtitle>
+    </mat-card-header>
 
-        <mat-card-content>
-            <div class="status-row">
-                <span class="label">Status</span>
-                <span class="value">
-                    {{ getStatusName(device.status) }}
-                </span>
-            </div>
-        </mat-card-content>
-    </mat-card>
+    <mat-card-content>
+      <p>
+        <strong>Status:</strong>
+        {{ device.status.name }}
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>
